@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+<div class="container">
+    <h1 class="mt-5 mb-5 text-center text-primary"><b>Result Management Application</b></h1>
+    <div class="text-right">
+        <a href="/dashboard" class="btn btn-sm btn-primary">back</a><br/><br/>
+    </div>
+    <div class="row">  
+        <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            
+            <div class="panel panel-info">
+                <% if(message.length>0){ %>
+                    <div class="alert alert-success" style="text-align: center;">
+                      <%= message %>
+                    </div>
+                  <% } %>
+                  
+                  <% if(warning.length>0){ %>
+                    <div class="alert alert-danger" style="text-align: center;">
+                      <%= warning %>
+                    </div>
+                  <% } %>
+                <div class="panel-heading">
+                  
+                    <div class="panel-title"style="text-align: center;">Add Student Details </div>
+                   
+                </div>  
+                <div class="panel-body" >
+                    <form action="/add" id="EmployeeForm" class="form-horizontal" method="post"  role="form">
+                        
+                        <div id="signupalert" style="display:none" class="alert alert-danger">
+                            <p>Error:</p>
+                            <span></span>
+                        </div>
+                            
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Roll No<span class="required">*</span></label>
+                            <div class="col-md-9">
+                                <input type="number" class="form-control"  placeholder="Enter roll no"  name="Roll_No">
+                            </div>
+                        </div>
+                          
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Name<span class="required">*</span></label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control"  placeholder="Enter name"  name="Name">
+                            </div>
+                        </div>
+                            
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Date of Birth<span class="required">*</span></label>
+                            <div class="col-md-9">
+                                <input type="date" class="form-control"  placeholder="Enter DOB"  name="DOB">
+                            </div>
+                        </div>
+                            
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Score<span class="required">*</span></label>
+                            <div class="col-md-9">
+                                <input type="number" class="form-control"  placeholder="Enter Score"  name="Score">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                                                                 
+                            <div class="col-md-offset-3 col-md-9" >
+                            <input type="submit" name="submit" value="submit" class="btn btn-primary"> 
+                            <input  type="reset" value="Reset"class="btn btn-primary">                        
+                        </div>
+                        </div>
+                        
+                    </form>
+                 </div>
+            </div>
+  
+        </div> 
+    </div>
+  </div>
+<%-include('footer')-%>
+

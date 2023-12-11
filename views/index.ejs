@@ -1,0 +1,35 @@
+<%-include('header')-%>
+    <% if(message.length>0){ %>
+        <div class="alert alert-success"style="text-align: center;">
+          <%= message %>
+        </div>
+      <% } %>
+        <div class="container">
+            <!-- <h1 class="mt-5 mb-5 text-center text-primary"><b>Result Management Application</b></h1> -->
+            <h1 class="mt-5 mb-5 text-center text-primary"><b>Result Management Application</b></h1>
+
+            <span class="example-spacer"></span>
+            <div class="row mt-5">
+                <div class="col-md-3">&nbsp;</div>
+                <div class="col-md-6">
+                    <div class="card"style="width: 40rem; height: 20rem;">
+                        <div class="card-header" style="height: 4rem;font-weight: bold;background-color: rgb(132, 201, 230);text-align: center;font-size:x-large;">
+                            Login as
+                          </div>
+
+                            <div class="card-body" style="text-align: center;height: fit-content;margin-top: 60px;">
+
+                                <a href="/teacherLogin" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Teacher</a>
+                                <a href="/studentLogin" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Student</a>
+                           
+                        </div>
+                    </div>
+              
+                </div>
+            </div>
+        </div>
+        <%-include('footer')-%>
+
+
+
+

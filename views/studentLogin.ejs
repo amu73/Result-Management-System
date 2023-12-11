@@ -1,0 +1,60 @@
+<%-include('header')-%>
+
+</head>
+<body>
+    <script src="datepicker.min.js"></script>
+   
+        <div class="container" >
+            <h1 class="mt-5 mb-5 text-center text-primary" ><b>Result Management Application</b></h1>
+        
+            <div class="row mt-5">
+                <div class="col-md-3">&nbsp;</div>
+                <div class="col-md-6">
+                    <% if(message.length>0){ %>
+                        <div class="alert alert-danger"style="text-align: center;">
+                          <%= message %>
+                        </div>
+                      <% } %>
+                    <div class="card"style="width: 40rem; height: 20rem;">
+                        <div class="card-header" style="height: 4rem;background-color:rgb(148, 215, 214);text-align: center;font-size:x-large;">
+                            Student Login Page 
+                          </div>
+                        <div class="card-body" style="background-color: rgb(208, 241, 166);font-size: medium;">
+                            <form method="post" action="/studentLogin" >
+                              
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Date of Birth<span class="required">*</span></label>
+                                    <div class="col-md-9">
+                                        <input type="date" class="form-control"  placeholder="Enter DOB"  name="DOB">
+                                    </div>
+                                </div><br>
+                             
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Roll No<span class="required">*</span></label>
+                                    <div class="col-md-9">
+                                        <input type="number" class="form-control"  placeholder="Enter roll no"  name="Roll_No">
+                                    </div>
+                                </div><br>
+                                
+                                <div class="form-group">
+                                                                         
+                                    <div class="col-md-offset-3 col-md-9" style="text-align: center;" >
+                                    <input type="submit" name="submit" value="submit" class="btn btn-primary"> 
+                                    <input  type="reset" value="Reset"class="btn btn-primary">                        
+                                </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+              
+                </div>
+            </div>
+        </div>
+
+
+
+        
+
+
+        <%-include('footer')-%>

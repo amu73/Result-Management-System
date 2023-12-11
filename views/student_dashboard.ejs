@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <% if(message.length>0){ %>
+      <div class="alert alert-success" style="text-align: center;">
+        <%= message %>
+      </div>
+    <% } %>
+    
+    <div class="container">
+      <h1 class="mt-5 mb-5 text-center text-primary"><b>Result Management Application</b></h1>
+      
+     
+    <div class="mt-5 mb-5 text-right text-primary">
+      <a href="/logout" class="btn btn-sm btn-primary" >Logout</a><br/><br/>
+      <a href="/add" class="btn btn-sm btn-primary">Add User</a><br/><br/>
+    </div>
+      <div class="row" >
+    
+          <table class="table table-striped table-primary" >
+            <thead>
+              <tr>
+                <th>Roll_No</th>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Score</th>
+                    <th>Action</th>
+               
+              </tr>
+            </thead>
+            <tbody>
+              <%if (records.length >0){ %>
+              <% records.forEach(function(row){ %>
+              <tr>
+                <td><%= row.Roll_No %></td>
+                <td><%= row.Name %></td>
+                <td><%= row.DOB %></td>
+                <td><%= row.Score %></td>
+             
+                <td><a class="btn btn-primary btn-xs" href="/edit/<%= row.id %>"><i class="fa fa-edit"></i></a>
+                  <a class="btn btn-danger btn-xs" href="/delete/<%= row.id %>"><i class="fa fa-trash"></i></a>
+                </td>
+              </tr>
+              <% })}else{ %>
+                <tr>
+                    <td colspan="6">No Record Found</td>
+                    
+                  </tr>
+                <% } %>
+            </tbody>
+          </table>
+    </div>
+  </div>
+  
+  <%-include('footer')-%>

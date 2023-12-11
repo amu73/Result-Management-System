@@ -1,0 +1,52 @@
+<%-include('header')-%>
+        <!-- <h1><%= title %></h1>              -->
+    <div class="container" >
+      <h1 class="mt-5 mb-5 text-center text-primary" ><b>Result Management Application</b></h1>
+      <a href="/logout" class="btn btn-sm btn-primary">Logout</a><br/><br/>
+      <div class="">
+        
+      </div>
+      <div class="row mt-5">
+          <div class="col-md-3">&nbsp;</div>
+          <div class="col-md-6">
+              <div class="card">
+                  <div class="card-header" style="font-weight: bold;background-color:rgb(148, 215, 214);text-align: center;font-size:x-large;">
+                      view result 
+                    </div>
+                  <div class="card-body" style="background-color: rgb(208, 241, 166);">
+                      <form method="post" action="/viewResult">
+                        <%if (records.length >0){ %>
+                          <% records.forEach(function(row){ %>
+                          <div class="mb-3" style="font-weight: bold;">
+                            <label class="col-sm-2 col-form-label" >Roll_No :</label>
+                            <%= row.Roll_No %>
+                          </div>
+
+                          <div class="mb-3" style="font-weight: bold;">
+                            <label class="col-sm-2 col-form-label" >Name :</label>
+                            <%= row.Name %>
+                          </div>
+
+                          <div class="mb-3" style="font-weight: bold;">
+                            <label class="col-sm-2 col-form-label" >DOB :</label>
+                            <%= row.DOB %>
+                          </div>
+
+                          <div class="mb-3" style="font-weight: bold;">
+                            <label class="col-sm-2 col-form-label">Score :</label>
+                            <%= row.Score %>
+                          </div>
+
+                          <% })}else{ %>                            
+                                <div colspan="6">No Record Found</div>                                                        
+                            <% } %>
+                      </form>
+                  </div>
+              </div>
+        
+          </div>
+      </div>
+  </div>
+
+
+  <%-include('footer')-%>

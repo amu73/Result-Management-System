@@ -1,0 +1,17 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0px;
+  padding: 0px;
+  background-color: antiquewhite;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+.required {
+  color: red;
+}
+
